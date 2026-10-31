@@ -1,0 +1,70 @@
+title: EarnAppHAView
+views:
+  - title: Vue d'ensemble
+    path: earnapp
+    icon: mdi:cash-multiple
+    cards:
+      - type: entities
+        title: Gains et compte
+        show_header_toggle: false
+        entities:
+          - entity: sensor.earnapp_compte
+          - entity: sensor.earnapp_solde
+          - entity: sensor.earnapp_gains_cumules
+          - entity: sensor.earnapp_multiplicateur_de_gains
+          - entity: sensor.earnapp_bonus_de_parrainage
+          - entity: sensor.earnapp_bonus_de_parrainage_cumules
+      - type: entities
+        title: Appareils
+        show_header_toggle: false
+        entities:
+          - entity: sensor.earnapp_appareils
+          - entity: sensor.earnapp_appareils_windows
+          - entity: sensor.earnapp_appareils_linux
+          - entity: sensor.earnapp_autres_appareils
+          - entity: sensor.earnapp_appareils_bannis
+          - entity: sensor.earnapp_bande_passante_utilisee
+      - type: entities
+        title: Transactions et paiements
+        show_header_toggle: false
+        entities:
+          - entity: sensor.earnapp_transactions
+          - entity: sensor.earnapp_paiements_en_attente
+          - entity: sensor.earnapp_paiements_effectues
+      - type: entities
+        title: Parrainage
+        show_header_toggle: false
+        entities:
+          - entity: sensor.earnapp_filleuls
+          - entity: sensor.earnapp_gains_de_parrainage
+          - entity: sensor.earnapp_gains_de_parrainage_cumules
+      - type: markdown
+        title: Détails du compte
+        content: |
+          ```json
+          {{ states.sensor.earnapp_compte.attributes | to_json(pretty_print=True) }}
+          ```
+      - type: markdown
+        title: Détails des gains
+        content: |
+          ```json
+          {{ states.sensor.earnapp_solde.attributes | to_json(pretty_print=True) }}
+          ```
+      - type: markdown
+        title: Détails des appareils
+        content: |
+          ```json
+          {{ states.sensor.earnapp_appareils.attributes | to_json(pretty_print=True) }}
+          ```
+      - type: markdown
+        title: Détails des transactions
+        content: |
+          ```json
+          {{ states.sensor.earnapp_transactions.attributes | to_json(pretty_print=True) }}
+          ```
+      - type: markdown
+        title: Détails du parrainage
+        content: |
+          ```json
+          {{ states.sensor.earnapp_filleuls.attributes | to_json(pretty_print=True) }}
+          ```

@@ -1,0 +1,21 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connexion à EarnAppHAView",
+        "description": "Saisissez la valeur du cookie oauth-refresh-token. Dans le tableau de bord EarnApp, ouvrez les outils de développement du navigateur, onglet Réseau, rechargez la page, filtrez sur google_oauth, ouvrez google_oauth.js?... puis copiez la valeur oauth-refresh-token dans l'onglet Cookies.",
+        "data": {
+          "token": "Valeur du cookie oauth-refresh-token"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossible de joindre EarnApp. Vérifiez votre connexion et réessayez.",
+      "invalid_auth": "Le jeton est vide ou a été refusé par EarnApp.",
+      "dependency_missing": "La bibliothèque pyEarnapp est absente. Réinstallez l'intégration et redémarrez Home Assistant."
+    },
+    "abort": {
+      "already_configured": "Ce compte EarnApp est déjà configuré."
+    }
+  }
+}
